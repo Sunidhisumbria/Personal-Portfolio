@@ -1,19 +1,13 @@
 "use server";
 
-import { z } from "zod";
 import { getDb } from "@/db";
 import { contactMessages } from "@/db/schema";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(2, "Please enter your name").max(100),
-  email: z.email("Please enter a valid email").max(200),
-  message: z.string().trim().min(10, "Message should be at least 10 characters").max(5000),
-});
+import { validateContact, type ContactErrors, type ContactInput } from "@/lib/contact-schema";
 
 export type ContactState = {
   status: "idle" | "success" | "error";
   message?: string;
-  errors?: Partial<Record<keyof z.infer<typeof contactSchema>, string[]>>;
+  errors?: ContactErrors;
   values?: { name?: string; email?: string; message?: string };
 };
 
@@ -32,9 +26,9 @@ export async function sendContactMessage(
     return { status: "success", message: "Thanks! Your message has been sent." };
   }
 
-  const parsed = contactSchema.safeParse(values);
+  const parsed = validateContact(values);
   if (!parsed.success) {
-    return { status: "error", errors: z.flattenError(parsed.error).fieldErrors, values };
+    return { status: "error", errors: parsed.errors, values };
   }
 
   try {
@@ -58,7 +52,7 @@ export async function sendContactMessage(
   return { status: "success", message: "Thanks! Your message has been sent — I'll get back to you soon." };
 }
 
-async function sendEmailNotification({ name, email, message }: z.infer<typeof contactSchema>) {
+async function sendEmailNotification({ name, email, message }: ContactInput) {
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
   if (!apiKey || !to) {
@@ -90,7 +84,7 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
-function emailHtml({ name, email, message }: z.infer<typeof contactSchema>) {
+function emailHtml({ name, email, message }: ContactInput) {
   const sentAt = new Date().toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",
     dateStyle: "medium",
