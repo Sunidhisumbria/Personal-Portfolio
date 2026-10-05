@@ -9,9 +9,9 @@ import { GitHubIcon, LinkedInIcon } from "./ui";
 const ease = [0.22, 1, 0.36, 1] as const;
 const rotatingWords = ["marketplaces", "streaming platforms", "payment flows", "real-time apps", "REST APIs"];
 const floatingBadges = [
-  { label: "React", className: "-left-10 top-6 sm:-left-14", delay: 0 },
-  { label: "Node.js", className: "-right-8 top-1/3 sm:-right-12", delay: 1.2 },
-  { label: "Next.js", className: "-left-6 bottom-4 sm:-left-10", delay: 0.6 },
+  { label: "React", className: "-left-20 top-4 sm:-left-14 sm:top-6", delay: 0 },
+  { label: "Node.js", className: "-right-20 top-1/3 sm:-right-12", delay: 1.2 },
+  { label: "Next.js", className: "-left-16 bottom-3 sm:-left-10 sm:bottom-4", delay: 0.6 },
 ];
 
 export function Hero() {
@@ -160,7 +160,7 @@ export function Hero() {
               width={300}
               height={300}
               priority
-              className="relative size-full rounded-[calc(2rem-2px)] bg-surface object-cover"
+              className="relative size-full rounded-[calc(2rem-2px)] bg-surface object-cover object-[50%_30%]"
             />
           </div>
           <div className="absolute -inset-6 -z-10 rounded-full bg-accent/20 blur-3xl" />
