@@ -44,7 +44,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease, delay: 0.2 }}
             className="font-mono text-xs uppercase tracking-[0.25em] text-muted"
           >
-            {profile.role}
+            {profile.name} · {profile.role}
             {profile.location && ` · ${profile.location.split(" /")[0]}`}
           </motion.p>
 

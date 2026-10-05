@@ -1,6 +1,13 @@
 // All site content lives here. Edit this file to update the portfolio —
 // no component changes needed. Search for "TODO" to find placeholders.
 
+export const site = {
+  // The public address of this site. Change it here if you move to a custom domain.
+  url: "https://sunidhi-portfolio-k5ii.onrender.com",
+  // Google Search Console "HTML tag" verification code (the content="..." value only).
+  googleVerification: "",
+};
+
 export const profile = {
   name: "Sunidhi Thakur",
   role: "Full-Stack Developer",
