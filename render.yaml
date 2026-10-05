@@ -1,0 +1,17 @@
+services:
+  - type: web
+    runtime: node
+    name: sunidhi-portfolio
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      # Secrets: Render asks for these values when you create the Blueprint.
+      - key: DATABASE_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_TO_EMAIL
+        sync: false
