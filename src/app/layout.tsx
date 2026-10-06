@@ -26,9 +26,7 @@ export const metadata: Metadata = {
   authors: [{ name: profile.name, url: site.url }],
   creator: profile.name,
   keywords: [
-    profile.name,
-    `${profile.name} developer`,
-    `${profile.name} portfolio`,
+    ...[profile.name, ...profile.alsoKnownAs].flatMap((n) => [n, `${n} developer`, `${n} portfolio`]),
     "Full-Stack Developer",
     "React Developer",
     "Next.js Developer",

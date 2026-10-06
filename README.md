@@ -1,4 +1,4 @@
-# Sunidhi Thakur — Portfolio
+# Sunidhi Sumbria — Portfolio
 
 Next.js (App Router) + Tailwind CSS. The contact form saves messages to Neon Postgres (Drizzle) and emails them via Resend.
 

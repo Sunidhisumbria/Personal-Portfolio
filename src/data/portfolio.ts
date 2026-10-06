@@ -9,7 +9,9 @@ export const site = {
 };
 
 export const profile = {
-  name: "Sunidhi Thakur",
+  name: "Sunidhi Sumbria",
+  // Other names people may search for. Used only in hidden search data, not shown on the page.
+  alsoKnownAs: ["Sunidhi Thakur"],
   role: "Full-Stack Developer",
   tagline:
     "I build production marketplaces, streaming platforms and payment flows — end to end, from React UI to Node APIs and the database underneath.",

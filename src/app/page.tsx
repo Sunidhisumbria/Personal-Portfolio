@@ -14,7 +14,7 @@ const website = {
   "@type": "WebSite",
   "@id": `${site.url}/#website`,
   name: profile.name,
-  alternateName: [`${profile.name} Portfolio`, `${profile.name} — ${profile.role}`],
+  alternateName: [`${profile.name} Portfolio`, `${profile.name} — ${profile.role}`, ...profile.alsoKnownAs],
   url: `${site.url}/`,
 };
 
@@ -26,6 +26,9 @@ const profilePage = {
     "@type": "Person",
     "@id": `${site.url}/#person`,
     name: profile.name,
+    alternateName: profile.alsoKnownAs,
+    givenName: profile.name.split(" ")[0],
+    familyName: profile.name.split(" ").slice(1).join(" "),
     url: site.url,
     image: `${site.url}${profile.photo}`,
     jobTitle: profile.role,
