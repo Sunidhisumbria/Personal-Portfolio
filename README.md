@@ -7,7 +7,7 @@ Next.js (App Router) + Tailwind CSS. The contact form saves messages to Neon Pos
 All text, projects, stack and links live in [`src/data/portfolio.ts`](src/data/portfolio.ts).
 Search that file for `TODO` to find placeholders.
 
-- **Profile photo:** put `profile.jpg` in `public/` and set `profile.photo` to `"/profile.jpg"`.
+- **Profile photo:** put a real `.jpg` (~800px wide) in `public/` and set `profile.photo` to its path, e.g. `"/sunidhi-thakur.jpg"`. When replacing the photo, use a **new file name** — browsers and the image optimizer cache by URL, so reusing the old name keeps showing the old photo.
 - **Resume:** put `resume.pdf` in `public/` and set `profile.resumeUrl` to `"/resume.pdf"` (the "Download CV" button appears automatically).
 - **Project screenshots:** put images in `public/projects/` and set `image: "/projects/dayflex.png"` on a project.
 

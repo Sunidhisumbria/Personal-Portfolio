@@ -9,10 +9,19 @@ import { education, profile, site, stack } from "@/data/portfolio";
 
 // Structured data: tells Google this page is the profile of a specific person and
 // links it to the same person's LinkedIn and GitHub (helps name searches).
-const jsonLd = {
-  "@context": "https://schema.org",
+// The WebSite entry sets the site name Google shows above the search result.
+const website = {
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  name: profile.name,
+  alternateName: [`${profile.name} Portfolio`, `${profile.name} — ${profile.role}`],
+  url: `${site.url}/`,
+};
+
+const profilePage = {
   "@type": "ProfilePage",
-  url: site.url,
+  url: `${site.url}/`,
+  isPartOf: { "@id": `${site.url}/#website` },
   mainEntity: {
     "@type": "Person",
     "@id": `${site.url}/#person`,
@@ -27,6 +36,8 @@ const jsonLd = {
     knowsAbout: stack.flatMap((s) => s.items).slice(0, 25),
   },
 };
+
+const jsonLd = { "@context": "https://schema.org", "@graph": [website, profilePage] };
 
 export default function Home() {
   return (
