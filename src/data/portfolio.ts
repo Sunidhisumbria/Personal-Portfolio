@@ -16,7 +16,7 @@ export const profile = {
   tagline:
     "I build production marketplaces, streaming platforms and payment flows — end to end, from React UI to Node APIs and the database underneath.",
   location: "",
-  photo: "/sunidhi-thakur.jpg",
+  photo: "/sunidhi-sumbria.jpg",
   email: "sunidhisumbria@gmail.com",
   phone: "+91 70091 45910",
   // TODO: drop resume.pdf into /public and set this to "/resume.pdf"
