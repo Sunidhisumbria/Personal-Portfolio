@@ -24,7 +24,7 @@ export function Contact() {
   const channels = [
     profile.email && { href: `mailto:${profile.email}`, label: "Email", value: profile.email, Icon: MailIcon },
     profile.phone && { href: `tel:${profile.phone.replace(/\s/g, "")}`, label: "Phone", value: profile.phone, Icon: PhoneIcon },
-    { href: profile.links.linkedin, label: "LinkedIn", value: "sunidhithakurdev", Icon: LinkedInIcon, external: true },
+    { href: profile.links.linkedin, label: "LinkedIn", value: "sunidhisumbria", Icon: LinkedInIcon, external: true },
     { href: profile.links.github, label: "GitHub", value: "Sunidhisumbria", Icon: GitHubIcon, external: true },
   ].filter(Boolean) as { href: string; label: string; value: string; Icon: typeof MailIcon; external?: boolean }[];
 

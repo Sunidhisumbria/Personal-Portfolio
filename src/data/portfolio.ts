@@ -23,7 +23,7 @@ export const profile = {
   resumeUrl: "",
   links: {
     github: "https://github.com/Sunidhisumbria/",
-    linkedin: "https://www.linkedin.com/in/sunidhithakurdev",
+    linkedin: "https://www.linkedin.com/in/sunidhisumbria",
   },
 };
 
