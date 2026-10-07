@@ -25,11 +25,12 @@ npm run dev     # http://localhost:3000
 npm run build && npm start
 ```
 
-## Deploying to Render
+## Deploying
 
-1. Push this folder to a GitHub repo.
-2. In Render: **New → Blueprint**, pick the repo. `render.yaml` creates a free Node web service
-   and asks for `DATABASE_URL`, `RESEND_API_KEY` and `CONTACT_TO_EMAIL`.
-3. Optional: add a custom domain under the service's **Settings → Custom Domains**.
+Live at **https://sunidhisumbria.vercel.app** (Vercel, Hobby plan). Every push to `main` deploys automatically.
+Environment variables (`DATABASE_URL`, `RESEND_API_KEY`, `CONTACT_TO_EMAIL`) are set in Vercel → Project → Settings → Environment Variables.
 
-Note: Render's free web services sleep after ~15 minutes idle, so the first visit after that takes ~30–50s to load.
+The site's public address lives in `site.url` in `src/data/portfolio.ts` — change it there if the domain changes.
+
+The old Render deployment (`render.yaml`) only redirects to the Vercel address. It was moved because Render's free plan
+answered Google's crawler with a "Disallow: /" robots.txt, which blocked indexing.
