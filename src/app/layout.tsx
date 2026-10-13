@@ -47,7 +47,12 @@ export const metadata: Metadata = {
     lastName: profile.name.split(" ").slice(1).join(" "),
   },
   twitter: { card: "summary_large_image", title, description },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    // Allows Google to show a large photo thumbnail and full snippet next to the search result.
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   ...(site.googleVerification && { verification: { google: site.googleVerification } }),
 };
 
