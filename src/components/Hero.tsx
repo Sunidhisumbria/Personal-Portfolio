@@ -160,6 +160,8 @@ export function Hero() {
               width={300}
               height={300}
               priority
+              // Serve the original file so the page, sitemap and structured data all use the same image URL (helps Google Images).
+              unoptimized
               className="relative size-full rounded-[calc(2rem-2px)] bg-surface object-cover object-[50%_30%]"
             />
           </div>
